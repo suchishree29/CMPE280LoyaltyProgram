@@ -1,0 +1,17 @@
+.thumbnail {
+    padding-right : 5px;
+    padding-left : 5px;
+    padding-top : 5px;
+    padding-bottom : 5px;
+    border-radius: 15px;
+
+
+}
+
+.transaction:hover {
+    cursor: pointer;
+}
+
+.ng-invalid.ng-valid-required {
+	background-color:pink;
+}

@@ -1,0 +1,17 @@
+<div ng-controller="orderDetails" style="margin-top:100px;">
+    <h1 style="text-align:center;"> Order Details </h1>
+    <table style="width: 75%; margin: 0 auto; border: 5px solid; text-align: center;">
+          <tr style="line-height:5;background-color: #863289; color: white;">
+			<th> </th>
+            <th> Order Date </th>
+            <th> Voucher Name </th>
+            <th> Points Redeemed </th>
+          </tr>
+          <tr ng-repeat="order in orders" style="line-height:5;">
+       	    <td> {{$index+1}} </td>
+            <td> {{ order.orderDate | date:'MM/dd/yyyy' }}</td>
+            <td> {{ order.items }}</td>
+            <td> {{ order.points }}</td>
+          </tr>
+	</table> 	
+</div>

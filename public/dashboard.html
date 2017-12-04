@@ -1,0 +1,25 @@
+<div ng-init="getVoucherDetails()" class="col-md-6 col-md-offset-3" style="margin: 0 auto; margin-top:100px;background-color:white;" ng-controller="dashboard">
+    <h2 style="margin-top:100px;"> Welcome {{firstName}} you have {{totalPoints}} points</h2>
+    <br><br>
+    <div class=row>
+    <div ng-repeat="voucher in vouchers" class="col-sm-1 col-md-4">
+            <div class="thumbnail" ng-init="voucher.redeemed = false;" style="background-color:#212529;text-align: center;">
+                <label style="color:white;font-size:25px;">{{voucher.voucherName}}</label>
+                <br>
+                <label style="color:white;;font-size:15px;">{{voucher.points}} Points</label>
+                <br>
+                <label style="color:white;font-size:15px;"> Worth: ${{voucher.value}}</label>
+                <br>
+                <label style="color:white;font-size:25px;" ng-if="voucher.redeemed">{{voucher.voucherCode}}</label>
+                <div class="clearfix" ng-if="(!(voucher.redeemed)) && totalPoints >= voucher.points">
+                	<a ng-click="redeemCoupon(voucher)"  class="btn btn-success pull-center" role="button">Redeem Now</a>
+                </div>           
+            </div>
+            <br>
+    </div>
+    </div>
+    
+    <br>
+
+
+</div>

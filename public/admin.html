@@ -1,0 +1,25 @@
+<div class="col-md-6 col-md-offset-3" style="margin: 0 auto; margin-top:100px;background-color:light-blue;" ng-controller="admin">
+    <h2>Add Item</h2>
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="voucherName">Voucher Name</label>
+            <input type="text" name="voucherName" id="voucherName" class="form-control" ng-model="voucherName" required placeholder="Voucher Name"/>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="points">Points</label>
+            <input type="text" name="points" id="points" class="form-control" ng-model="points" required placeholder="Points needed"/>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.value.$dirty && form.value.$error.required }">
+            <label for="value">Value</label>
+            <input type="text" name="value" id="value" class="form-control" ng-model="value" required />
+            <span ng-show="form.value.$dirty && form.value.$error.required" class="help-block">Value is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.voucherCode.$dirty && form.voucherCode.$error.required }">
+            <label for="voucherCode">Voucher Code</label>
+            <input type="text" name="voucherCode" id="voucherCode" class="form-control" ng-model="voucherCode" required />
+            <span ng-show="form.voucherCode.$dirty && form.voucherCode.$error.required" class="help-block">VoucherCode is required</span>
+        </div>
+        <div class="form-actions">
+            <button ng-click="addItemData()" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Add Data</button>
+        </div>
+</div>
+
