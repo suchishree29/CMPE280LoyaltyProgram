@@ -1,1 +1,1 @@
-# CMPE280LoyaltyProgram
+# CMPE280 Digital Loyalty Program
