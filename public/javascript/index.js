@@ -272,7 +272,6 @@ app.controller('dashboard', function($scope, $http, userDetails, $location){
         console.log("*************In client side *****************")
         var url="/getVoucherDetails"
         $scope.vouchers = [];
-
         $http.get(url)
             .then(
                 function(response){
@@ -284,9 +283,6 @@ app.controller('dashboard', function($scope, $http, userDetails, $location){
                 console.log("Dashboard loading failed");
             }
     }
-
-
-
 
     $scope.redeemCoupon = function (coupon) {
         console.log(coupon);
@@ -300,8 +296,12 @@ app.controller('dashboard', function($scope, $http, userDetails, $location){
         $http.post(url,coupon )
         .then(
             function(response){
-                console.log("Data Saved");
-		coupon.redeemed = true;
+                console.log("Redeem coupon scope mein hai",response)
+                console.log(response.updatedPoints);
+                userDetails.setTotalPoints(response.data.updatedPoints);
+                $scope.totalPoints = response.data.updatedPoints;
+                console.log("Scope ka total pointsssssssss",$scope.totalPoints);
+		        coupon.redeemed = true;
             }), 
             function(response){
                 console.log("Could not save data");
@@ -370,8 +370,8 @@ app.controller('signup', function($scope, $http, $location, userDetails) {
                 $location.path("/dashboard");
             }, 
             function(err){
-		console.log(err);
-		$scope.invalidLogin = true;
+		        console.log(err);
+		        $scope.invalidLogin = true;
                 console.log("log in failure");
             }
 		)
