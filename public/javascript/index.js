@@ -346,7 +346,7 @@ app.controller('signup', function($scope, $http, $location, userDetails) {
 			console.log("failed");
                        }
                     );
-}
+};
     
     $scope.login = function(){
 		var data = {

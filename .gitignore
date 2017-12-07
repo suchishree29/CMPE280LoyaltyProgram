@@ -1,0 +1,5 @@
+node_modules/
+.idea/
+node_modules/.bin/dev-ip.cmd
+node_modules/.bin/browser-sync
+package-lock.json
